@@ -16,15 +16,16 @@ while tries < 100:
         try:
             c.enqueue(dice)
             print(c)
-        except:
-            pass
+        except OverflowError:
+         print("No entro, estaba llena")
+
     if coin == 2:
         print('dequeu...')
         try:
-            data = c.dqueue()
+            data = c.dequeue()
             print(data)
-        except:
-            pass
+        except ValueError:
+            print("Nada sale, estaba vacía")   
 
 total = tries
 print(total)
